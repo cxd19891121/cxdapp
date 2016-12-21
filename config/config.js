@@ -14,22 +14,26 @@ var config = (function(){
     //
     // };
 
+    var heroku = {
+        baseUrl : 'http://cxdapp.herokuapp.com/'
+    };
+
     var mongoDB = {
         url: "mongodb://admin:admin@ds041566.mlab.com:41566/heroku_v4dcjtn0"
-    }
+    };
 
-    function getRedis(){
-        return redis;
+    function getHeroku(){
+        return heroku;
     }
 
     function getMongoDB(){
         return mongoDB;
     }
     return {
-        redisConfig: getRedis,
         mongoConfig : getMongoDB,
+        heroku: getHeroku
     }
 
-})()
+})();
 
 module.exports = config;
