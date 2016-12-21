@@ -1,0 +1,104 @@
+body{
+    color: white;
+}
+.black_word
+{
+    color:black;
+}
+.btn-black
+{
+    border-color:black;
+    background-color: white;
+}
+
+.uib-datepicker-popup  .text-info {
+    font-size: 14px;
+    color: black;
+}
+/* .datpicker .btn-info contains selected date */
+
+.uib-datepicker-popup  .btn:enabled
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+
+.search_popover
+{
+    max-width: 800px; /* optional max width */
+    width: intrinsic; /* Safari/WebKit uses a non-standard name */
+    width: -moz-max-content; /* Firefox/Gecko */
+    width: 800px; /* Chrome */
+    color: black;
+}
+.black_word
+{
+    color:black;
+}
+.btn-black
+{
+    border-color:black;
+    background-color: white;
+}
+
+.uib-datepicker-popup  .text-info {
+    font-size: 14px;
+    color: black;
+}
+/* .datpicker .btn-info contains selected date */
+
+
+
+.uib-datepicker-popup  .btn:enabled
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+
+.close_button
+{
+    top:0px;
+    right:0px;
+    float:right;
+
+}
+.text-danger{
+    color:#ffff00;
+}
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+    background-color: #333333;
+}
+
+textarea
+{
+    resize:none;
+}
+
+label.custom-checkbox, label.custom-radio {
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    font-weight: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+

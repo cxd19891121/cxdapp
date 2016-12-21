@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller = visitorCtrl>
+
+
+
+<head>
+<!--bower information-->
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+<!--css format-->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href= {{css.cxdapp}}>
+    <link rel="stylesheet" href= {{css.vendor}}>
+    <link rel="stylesheet" href= {{css.auth}}>
+    <link rel="stylesheet" href= {{css.app}}>
+
+
+</head>
+
+<body>
+<ui-view name="top"></ui-view>
+<ui-view></ui-view>
+<ui-view name="bot"></ui-view>
+</body>
+
+<!--router information-->
+<script src ='/app/template/visitor/visitor_ui_route.js'></script>
+
+<!--view-->
+<script src ='/app/component/working/view/working_view.html'></script>
+
+<!--controller-->
+<script src ='/app/template/visitor/visitor_controller.js'></script>
+<script src ='/app/component/working/controller/working_controller.js'></script>
+
+<!--util : service and factory-->
+<script src ='/app/util/ajaxService.js'></script>
+</html>
+
+
+
