@@ -1,7 +1,7 @@
 /**
  * Created by xiaodong chen on 12/20/2016.
  */
-var mongoDB = require('./../Service/mongoService');
+var mongoDB = require('./../service/mongoService');
 
 var userModule = (function tagSchemaModule() {
     var mongo = mongoDB.mongo();
