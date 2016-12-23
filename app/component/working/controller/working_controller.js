@@ -9,6 +9,8 @@ app.controller('workingCtrl',function($scope,ajaxService){
 
     $scope.messageObj = {};
 
+    console.log($scope.message);
+
     ajaxService.getAllUser(function(e,o){
         if(e){
             $scope.message  = e

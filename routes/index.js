@@ -3,6 +3,14 @@ var router = express.Router();
 var path = require('path');
 
 /* GET home page. */
+
+router.all('*', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+    next();
+});
+
 router.get('/', function (req, res, next) {
 
     var html = path.normalize(__dirname + '/../app/template/visitor/visitor.html');
