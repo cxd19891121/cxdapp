@@ -16,6 +16,7 @@ router.get('/app/template/*', sendResource)
 router.get('/app/component/*',sendResource)
 router.get('/bower_components/*', sendResource)
 router.get('/app/util/*', sendResource)
+router.get('/favicon.ico',sendFavicon);
 
 
 function sendResource(req,res){
@@ -23,6 +24,11 @@ function sendResource(req,res){
     var html = path.normalize(__dirname + '/../' + req.path);
     //console.log("file path :",html);
     res.sendFile(html)
+}
+
+function sendFavicon(req,res){
+    var html = path.normalize(__dirname + '/../app/assets/img/favicon-16x16.png');
+    res.sendFile(html);
 }
 
 module.exports = router;
