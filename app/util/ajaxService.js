@@ -5,7 +5,7 @@ app.service('ajaxService', ['$http', function ($http) {
 
     /* All the Url used for Ajax Call */
     var vm = this;
-    var baseUrl = "http://localhost:3000/"
+    var baseUrl = "https://cxdapp.herokuapp.com/"
     var url = {
         exp: baseUrl + 'exp/',
         user:baseUrl + 'user/',
