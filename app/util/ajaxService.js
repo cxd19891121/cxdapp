@@ -11,6 +11,8 @@ app.service('ajaxService', ['$http', function ($http) {
         heroku : "https://cxdapp.herokuapp.com/"
     }
     /* Switch local or heroku app.*/
+
+//    var baseUrl = urlList.localhost;
     var baseUrl = urlList.heroku;
 
     var url = {
