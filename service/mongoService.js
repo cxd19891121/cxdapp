@@ -2,7 +2,7 @@
  * Created by xiaodong chen on 12/20/2016.
  */
 var mongoose = require('mongoose');
-var mongoConfig = require('./../config/config').mongoConfig()
+var mongoConfig = require('./../config/config').MONGODB
 
 var mongoDB = (function mongodbService(){
 

@@ -3,9 +3,16 @@
  */
 app.service('ajaxService', ['$http', function ($http) {
 
-    /* All the Url used for Ajax Call */
     var vm = this;
-    var baseUrl = "https://cxdapp.herokuapp.com/"
+
+    /* All the Url used for Ajax Call */
+    var urlList = {
+        localhost: "http://localhost:3000/",
+        heroku : "https://cxdapp.herokuapp.com/"
+    }
+    /* Switch local or heroku app.*/
+    var baseUrl = urlList.heroku;
+
     var url = {
         exp: baseUrl + 'exp/',
         user:baseUrl + 'user/',

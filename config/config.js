@@ -1,39 +1,51 @@
 /**
  * Created by xiaodong chen on 12/20/2016.
  */
-var config = (function(){
 
-    // var redis = {
-    //
-    //     cloud: "AWS/us-east-1",
-    //     plan: "30MB",
-    //     DBName: "redis-cxdapp-8080926",
-    //     availableZone:"us-east-1",
-    //     password:"GlytOIzdDkiqOPM2",
-    //     EndPoint:"//redis-19444.c8.us-east-1-4.ec2.cloud.redislabs.com:19444",
-    //
-    // };
 
-    var heroku = {
-        baseUrl : 'http://cxdapp.herokuapp.com/'
-    };
+var CONFIG = {
 
-    var mongoDB = {
+    REDIS: {
+        client:"redis://redistogo:3d6a66cf0013274281729241e0b3d59b@crestfish.redistogo.com:11319",
+        herokuClient: ""
+    },
+
+    MONGODB: {
         url: "mongodb://admin:admin@ds041566.mlab.com:41566/heroku_v4dcjtn0"
-    };
+    },
 
-    function getHeroku(){
-        return heroku;
-    }
+    SESSION : {
+        secret: "faeb4453e5d14fe6f6d04637f78077c76c73d1b4",
+        proxy: true,
+        resave: true,
+        saveUninitialized: true,
+        maxAge: 3600000,
+    },
 
-    function getMongoDB(){
-        return mongoDB;
-    }
-    return {
-        mongoConfig : getMongoDB,
-        heroku: getHeroku
-    }
+    TEMPLATE: [
+        {
+            level:0,
+            name:'admin',
+            folder:'admin',
+            file:'admin.html',
+        },
+        {
+            level:1,
+            name:'user',
+            folder:'user',
+            file:'user.html',
+        },
 
-})();
+        {
+            level: 2,
+            name: 'visitor',
+            file: 'visitor.html',
+            folder:'visitor',
+        }
+    ]
 
-module.exports = config;
+
+}
+
+
+module.exports = CONFIG;
