@@ -2,7 +2,7 @@
  * Created by xiaodong chen on 12/20/2016.
  */
 
-var user = require("./../Model/userModel").getModel();
+var user = require("./../model/userModel").getModel();
 
 var userService = (function userAPI(){
 
