@@ -31,7 +31,6 @@ var sessionService = (function sessionAPI(){
         if(req.session.data == null || req.session.data == undefined){
             return visitorTemplate;
         }
-
         var level = req.session.data.level;
         return getTemplateByLevel(level);
     }
@@ -74,7 +73,7 @@ var sessionService = (function sessionAPI(){
         return visitorTemplate;
     }
 
-    return API
+    return API;
 
 })()
 

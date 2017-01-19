@@ -17,6 +17,7 @@ router.get('/bower_components/*', sendResource)
 router.get('/app/util/*', sendResource)
 router.get('/favicon.ico',sendFavicon);
 
+
 function sendFile(req,res){
     var file = session.getTemplateFile(req);
     var folder = session.getTemplateFolder(req);
@@ -35,5 +36,7 @@ function sendFavicon(req,res){
     var html = path.normalize(__dirname + '/../app/assets/img/favicon-16x16.png');
     res.sendFile(html);
 }
+
+
 
 module.exports = router;
