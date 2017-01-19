@@ -17,7 +17,7 @@
             local:"http://localhost:3000/"
         };
         var baseUrl = urlList.heroku;
-        baseUrl = urlList.local;
+//        baseUrl = urlList.local;
         var url = {
             exp: baseUrl + 'exp/',
             user: baseUrl + 'user/',
