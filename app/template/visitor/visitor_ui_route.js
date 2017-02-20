@@ -24,6 +24,9 @@
             loginCtrl: "loginCtrl",
             workingCtrl: "workingCtrl",
             navigationCtrl:"navigationCtrl",
+            javaCtrl:"javaCtrl",
+            javaUserCtrl:"javaUserCtrl",
+            javaNoteCtrl:"javaNoteCtrl"
         };
 
         /* Component part: It is a object which has the HTML contents in it. */
@@ -31,11 +34,11 @@
             navigation: {
                 templateUrl: "./app/component/navigation/navigation.html",
             },
+
             working: {
                 templateUrl: "./app/component/working/view/working_view.html",
                 controller: controllers.workingCtrl,
                 controllerAs: "vm"
-
             },
             bottom: {
                 template: "<h1>Bottom</h1>"
@@ -50,6 +53,22 @@
             },
             original:{
                 templateUrl:"./app/template/cssShow/original.html"
+            },
+
+            java:{
+                templateUrl:"./app/component/javaSpringDemo/java_spring.html",
+                controller:controllers.javaCtrl,
+                controllerAs:"vm"
+            },
+            javaUser:{
+                templateUrl:"./app/component/javaSpringDemo/java_spring_user.html",
+                controller:controllers.javaUserCtrl,
+                controllerAs:"vm"
+            },
+            javaNote:{
+                templateUrl:"./app/component/javaSpringDemo/java_note.html",
+                controller:controllers.javaNoteCtrl,
+                controllerAs:"vm"
             }
         };
 
@@ -76,6 +95,18 @@
             },
             original:{
                 "":component.original
+            },
+            javaSpring:{
+                "top":component.navigation,
+                "":component.java
+            },
+            javaSpringUser:{
+                "top":component.navigation,
+                "":component.javaUser
+            },
+            javaSpringNote:{
+                "top":component.navigation,
+                "":component.javaNote
             }
         };
 
@@ -98,6 +129,19 @@
                 url:'/original',
                 views:view.original
             })
+            .state("java",{
+                url:"/java",
+                views:view.javaSpring,
+            })
+            .state("java_user",{
+                url:"/java/user/:id",
+                views:view.javaSpringUser
+            })
+            .state("java_note",{
+                url:"/java/note/:id",
+                views:view.javaSpringNote
+            })
+
         ;
 
 
