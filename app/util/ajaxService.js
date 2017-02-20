@@ -14,13 +14,17 @@
         /* All the Url used for Ajax Call */
         var urlList = {
             heroku: "http://cxdapp.herokuapp.com/",
-            local:"http://localhost:3000/"
+            local:"http://localhost:3000/",
+            javaSpring:"https://cxd-java-spring-mvc.herokuapp.com/"
+
         };
         var baseUrl = urlList.heroku;
         baseUrl = urlList.local;
         var url = {
             exp: baseUrl + 'exp/',
             user: baseUrl + 'user/',
+            javaUser: urlList.javaSpring + 'user/',
+            javaNote: urlList.javaSpring + 'note/',
         }
 
         var flag = {
@@ -35,7 +39,22 @@
             createUser : createUser,
             deleteUserById : deleteUserById,
             updateUserById : updateUserById,
+
+            javaGetAllUser: javaGetAllUser,
+            javaGetUserById: javaGetUserById,
+            javaDeleteUserById: javaDeleteUserById,
+            javaAddNewUser: javaAddNewUser,
+            javaUpdateUser: javaUpdateUser,
+            javaGetAllNote: javaGetAllNote,
+            javaGetNoteById:javaGetNoteById,
+            javaGetNoteByUser: javaGetNoteByUser,
+            javaAddNote:javaAddNote,
+            javaUpdateNote:javaUpdateNote,
+            javaDeleteNoteById: javaDeleteNoteById
+
         };
+
+
 
         return service;
 
@@ -73,6 +92,62 @@
         }
 
 
+        /* ajax call for java component:
+        * READ for user and note*/
+
+        function javaGetAllUser(){
+            return $http.get(url.javaUser).then( handleSuccess, handleError );
+        }
+
+        function javaGetUserById(id){
+            return $http.get(url.javaUser+id ).then( handleSuccess, handleError );
+        }
+
+        function javaAddNewUser(user){
+            return $http.post(url.javaUser, user).then( handleSuccess, handleError);
+        }
+
+        function javaUpdateUser(user){
+            return $http.put(url.javaUser,user).then( handleSuccess, handleError);
+        }
+
+
+        function javaDeleteUserById(id){
+            return $http.delete(url.javaUser + id).then( handleSuccess, handleError);
+        }
+
+        function javaGetAllNote(){
+            return $http.get(url.javaNote).then( handleSuccess, handleError );
+        }
+
+        function javaGetNoteById(id){
+            return $http.get(url.javaNote + id).then( handleSuccess, handleError );
+        }
+
+        function javaGetNoteByUser(userId){
+            return $http.get(url.javaNote + "/user/"+ userId).then(handleSuccess,handleError);
+        }
+
+        function javaAddNote(note){
+            return $http.post(url.javaNote, note).then( handleSuccess, handleError);
+        }
+
+        function javaUpdateNote(note){
+            return $http.put(url.javaNote, note).then( handleSuccess, handleError);
+        }
+
+        function javaDeleteNoteById(id){
+            return $http.delete(url.user + id).then( handleSuccess, handleError);
+        }
+
+
+
+
+
+
+
+
+        /* callback handle function */
         function handleSuccess(res){
             if(flag.test){
                 console.log("success call", res);
