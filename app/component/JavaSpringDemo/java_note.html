@@ -1,0 +1,49 @@
+<div class = "container">
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="page-header">
+                <h1 id="forms">Note</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="well bs-component">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <legend>Note</legend>
+                        <div class="form-group">
+                            <label for="inputUsername" class="col-lg-2 control-label">Title
+                            </label>
+                            <div class="col-lg-10">
+                                <input type="text" ng-model="vm.note.type" class="form-control"
+                                       id="inputUsername"
+                                       placeholder="title">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="textArea" class="col-lg-2 control-label">Content</label>
+                            <div class="col-lg-10">
+                                <textarea ng-model = "vm.note.content" class="form-control" rows="3"
+                                          id="textArea"></textarea>
+                                <span class="help-block">Tips: nothing else</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                                <button type="submit" class="btn btn-primary" ng-click="vm.updateNote()">Submit
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>

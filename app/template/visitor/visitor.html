@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp" ng-controller = visitorCtrl>
+<html ng-app="cxdApp" ng-controller = "visitorCtrl as vm">
 
 
 
@@ -10,29 +10,42 @@
 
 <!--css format-->
     <meta charset="utf-8">
-    <link rel="stylesheet" href= {{css.cxdapp}}>
-    <link rel="stylesheet" href= {{css.vendor}}>
-    <link rel="stylesheet" href= {{css.auth}}>
-    <link rel="stylesheet" href= {{css.app}}>
-
+    <link rel="stylesheet" href= {{vm.css}}>
 
 </head>
 
 <body>
 <ui-view name="top"></ui-view>
+<button type="button" class="btn btn-lg btn-default" ng-click="vm.changeCss(vm.cssList.yeti)">Yeti</button>
+<button type="button" class="btn btn-lg btn-default" ng-click="vm.changeCss(vm.cssList.superhero)">Super Hero</button>
 <ui-view></ui-view>
 <ui-view name="bot"></ui-view>
 </body>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!--router information-->
 <script src ='/app/template/visitor/visitor_ui_route.js'></script>
 
 <!--view-->
 <script src ='/app/component/working/view/working_view.html'></script>
+<script src ='/app/component/login/view/login_view.html'></script>
+<script src ="/app/component/JavaSpringDemo/java_spring.html"></script>
+<script src ="/app/component/JavaSpringDemo/java_spring_user.html"></script>
+<script src ="/app/component/JavaSpringDemo/java_note.html"></script>
+
 
 <!--controller-->
 <script src ='/app/template/visitor/visitor_controller.js'></script>
 <script src ='/app/component/working/controller/working_controller.js'></script>
+<script src ='/app/component/login/controller/login_controller.js'></script>
+<script src ='/app/component/navigation/navigation_controller.js'></script>
+<script src ='/app/component/JavaSpringDemo/java_spring_controller.js'></script>
+<script src = "/app/component/JavaSpringDemo/java_user_controller.js"></script>
+<script src = "/app/component/JavaSpringDemo/java_note_controller.js"></script>
 
 <!--util : service and factory-->
 <script src ='/app/util/ajaxService.js'></script>

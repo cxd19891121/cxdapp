@@ -20,11 +20,11 @@ var login = (function loginAPI(){
         var email = req.params.email;
         userService.getByEmail(email,function(e,o){
             if(e){
-                res.send({error:e});
+                res.send({error:e , msg: STRING.ERROR_USER_GET_BY_EMAIL});
             }else if(o){
-                res.send({error: STRING.ERROR_DUPLICATE_EMAIL});
+                res.send({msg : STRING.ERROR_DUPLICATE_EMAIL,  error: "error"});
             }else{
-                res.send({error: STRING.SUCCESS_UNIQUE_EMAIL});
+                res.send({data: email ,msg: STRING.SUCCESS_UNIQUE_EMAIL});
             }
         })
     }
@@ -34,11 +34,11 @@ var login = (function loginAPI(){
 
         userService.getByName(username,function(e,o){
             if(e){
-                res.send({error:e});
+                res.send({error:e , msg:STRING.ERROR_USER_GET_BY_NAME});
             }else if(o){
-                res.send({error: STRING.ERROR_DUPLICATE_USERNAME});
+                res.send({error: o.username, msg: STRING.ERROR_DUPLICATE_USERNAME});
             }else{
-                res.send({success: STRING.SUCCESS_UNIQUE_USERNAME});
+                res.send({data: username, msg: STRING.SUCCESS_UNIQUE_USERNAME});
             }
         })
     }
@@ -53,12 +53,11 @@ var login = (function loginAPI(){
 
         userService.checkIdentify(username,hiddenPassword,function(e,findUser){
             if(e){
-                res.send(e);
+                res.send({error:e, msg: STRING.ERROR_USERNAME_PASSWORD_NO_MATCH});
             }else{
-
                 /* Store user info as session in "req.session.data" */
                session.storeInData(req,findUser);
-               res.send(findUser);
+               res.send({data:findUser, msg:" sign in success"});
             }
         })
     }
@@ -68,9 +67,9 @@ var login = (function loginAPI(){
         newUser.password = md5(newUser.password);
         userService.addUser(newUser,function(e,o){
             if(e){
-                res.send(e);
+                res.send({msg:"fail to sign up", error:e});
             }else{
-                res.send(o)
+                res.send({msg:"success sign in", data: o})
             }
         })
     }

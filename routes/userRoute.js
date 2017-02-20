@@ -1,15 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var userService = require('./../service/userService')
+var userService = require('./../service/userService');
 
-/* GET users listing. */
-
+/* GET 跨域请求 （本地调试的时候用得到） */
 router.all('*', CROP);
 
 /* GET users listing. */
-
 router.get('/', function(req, res) {
-    userService.getAllUser(send(res));
+    console.log("user get");
+    userService.getAllUser(function(o){
+        res.send(o);
+    });
 });
 
 router.get("/sample/:id", function(req, res){
@@ -47,12 +48,8 @@ router.put("/:id",function(req,res){
 
 
 function send(res){
-    return function(e,o){
-        if(e){
-            res.send(e)
-        }else{
-            res.send(o);
-        }
+    return function(o) {
+        res.send(o)
     }
 }
 

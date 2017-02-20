@@ -48,4 +48,20 @@ var CONFIG = {
 }
 
 
+/*
+ {
+ level: 2,
+ name: 'visitor',
+ file: 'visitor.html',
+ folder:'visitor',
+ }
+
+{
+ level: 2,
+ name: 'viewTest',
+ file: 'cssShow.html',
+ folder:'cssShow',
+ }
+ ]*/
+
 module.exports = CONFIG;

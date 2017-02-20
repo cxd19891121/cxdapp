@@ -1,22 +1,35 @@
 /**
  * Created by xiaodong chen on 12/19/2016.
  */
-app.controller('workingCtrl',function($scope,ajaxService){
 
-    $scope.message = "正在施工中。。。"
+(function () {
+    'use strict';
 
-    $scope.allUser =[];
+    angular
+        .module('cxdApp')
+        .controller('workingCtrl', workingCtrl);
 
-    $scope.messageObj = {};
+    workingCtrl.$inject = ['ajaxService'];
+    function workingCtrl(ajaxService) {
+        var vm = this;
 
-    console.log($scope.message);
+        vm.message = "正在施工中。。。"
 
-    ajaxService.getAllUser(function(e,o){
-        if(e){
-            $scope.message  = e
-        }else{
-            $scope.allUser  = o;
-        }
-    })
+        vm.allUser =[];
 
-})
+        vm.messageObj = {};
+
+
+
+        (function initController() {
+
+            ajaxService.getAllUser().then(
+                function(o){
+                    vm.allUser = o.data;
+                    vm.messageObj = o.msg;
+                }
+            )
+        })();
+    }
+
+})();

@@ -4,14 +4,13 @@
 var mongoose = require('mongoose');
 var mongoConfig = require('./../config/config').MONGODB
 
-var mongoDB = (function mongodbService(){
 
+
+var mongoDB = (function mongodbService(){
 
     var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
         replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
-
     var url = mongoConfig.url;
-
     mongoose.connect(url,options);
     var db = mongoose.connection;
 
@@ -29,10 +28,12 @@ var mongoDB = (function mongodbService(){
         });
     }
 
-    return {
+    var mongoServiceAPI = {
         mongo : getMongoose,
-        test: testModule,
-    }
+        test : testConnection
+    };
+    return mongoServiceAPI;
+
 
 })()
 
