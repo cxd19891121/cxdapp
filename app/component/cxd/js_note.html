@@ -1,0 +1,180 @@
+<div>
+
+    <div class = "container">
+        <h1> {{vm.title}}</h1>
+
+        <div class ="well-lg text-success">Js Data Structure Summary</div>
+
+        <div class = "panel panel-default">
+            <div class = "panel-heading" ng-click = "vm.togglePanel(0)"> Array Initial</div>
+                <div ng-show = "vm.panelControl[0]" class = "panel-body">
+                    <p> vm.daysOfWeek = new Array();</p>
+                    <pre> output:{{vm.daysOfWeek}}, length:{{vm.daysOfWeek.length}};</pre>
+
+                    <p> vm.daysOfWeek1 = new Array(7); </p>
+                    <pre>output:{{vm.daysOfWeek1}}, length:{{vm.daysOfWeek1.length}};</pre>
+
+
+                    <p> vm.daysOfWeek2 = newArray("Mon","Tue","Wed","Thr","Fri","Sat","Sun");</p>
+                    <pre>output: {{vm.daysOfWeek2}}, length : {{vm.daysOfWeek2.length}} ;</pre>
+
+                    <p> vm.daysOfWeek3 = []; </p>
+                    <pre>output: {{vm.daysOfWeek3}}, length: {{vm.daysOfWeek3.length}}</pre>
+
+                    <p>vm.daysOfWeek4 = ["Mon","Tue","Wed","Thr","Fri","Sat","Sun"]</p>
+                    <pre> output: {{vm.daysOfWeek4}}, length: {{vm.daysOfWeek4.length}};</pre>
+                </div>
+        </div>
+
+        <div class = "panel panel-default">
+            <div class = "panel-heading" ng-click = "vm.togglePanel(1)"> Add Element</div>
+                <div ng-show = "vm.panelControl[1]" class = "panel-body">
+                    <p class = "text-primary">// In javascript, array does not have fix length</p>
+                    <p> vm.numbers = [0,1,2,3,4,5];</p>
+                    <p> vm.numbers[ numbers.length ] = 6 </p>
+                    <pre>output:{{vm.numbers}}, length:{{vm.numbers.length}};</pre>
+
+                    <p class = "text-primary">// method : push(e1,e2,...)</p>
+                    <p> vm.numbers2 = [0,1,2,3,4,5,6]; </p>
+                    <p> vm.numbers2.push(7,8,9,10)</p>
+                    <pre>output:{{vm.numbers2}}, length:{{vm.numbers2.length}};</pre>
+
+                    <p class = "text-primary">// method : unshift(e1,e2,...)</p>
+                    <p> vm.numbers3 = [0,1,2,3,4,5];</p>
+                    <p> vm.numbers3.unshift(-2,-1);</p>
+                    <pre>output:{{vm.numbers3}}, length:{{vm.numbers3.length}};</pre>
+                </div>
+        </div>
+
+        <div class = "panel panel-default">
+            <div class = "panel-heading" ng-click = "vm.togglePanel(2)"> Remove Element</div>
+            <div ng-show = "vm.panelControl[2]" class = "panel-body">
+                <p class = "text-primary">// method: pop()</p>
+                <p> vm.numbers4 = [0,1,2,3,4,5];</p>
+                <p> vm.numbers4.pop();</p>
+                <pre>output:{{vm.numbers4}}, length:{{vm.numbers4.length}};</pre>
+
+                <p class = "text-primary">// method: shift()</p>
+                <p> vm.numbers5 = [0,1,2,3,4,5];</p>
+                <p> vm.numbers5.shift();</p>
+                <pre>output:{{vm.numbers5}}, length:{{vm.numbers5.length}};</pre>
+
+                <p class = "text-primary">// method: splice(startIndex, length)</p>
+                <p>
+                    vm.numbers6 = ["a","b","c","d","e","f","g","h"]; <br>
+                    vm.numbers6.splice(0,1);  // remove 1 element after index of 0 (include index 0),
+                    <br>
+                    vm.numbers6.splice(vm.numbers6.indexOf("g")); //remove all the elements after "g"(include "g")
+                </p>
+                <pre>output:{{vm.numbers6}}, length:{{vm.numbers6.length}};</pre>
+            </div>
+        </div>
+
+        <div class = "panel panel-default">
+            <div class = "panel-heading" ng-click = "vm.togglePanel(3)">Concat Array</div>
+            <div ng-show = "vm.panelControl[3]" class = "panel-body">
+                <p class = "text-primary">// method: concat()</p>
+                <p> var con1 = [1,2,3,4]; <br>
+                    var con2 = [-3,-2];<br>
+                    var negOne = -1;<br>
+                    vm.output0 = con2.concat(negOne,0,con1);
+                </p>
+                <pre>output:{{vm.output0}}, length:{{vm.output0.length}};</pre>
+            </div>
+        </div>
+        <div class = "panel panel-default">
+
+            <div class = "panel-heading" ng-click="vm.togglePanel(4)">Traverse</div>
+            <div ng-show = "vm.panelControl[4]" class = "panel-body">
+                <p class = "text-primary">
+                    // method: every( callback) and some( callback ) <br>
+                    // callback(element, index, array);
+                    // return true if all/some of the elements can go through callback function
+                </p>
+                <p> var sampleArr = [-1,0,1]; <br>
+                    function largeThanZero(element){  <br>
+                    &nbsp;&nbsp;return element > 0;  <br>
+                    } <br>
+
+                    vm.output1 = sampleArr.every(largeThanZero);
+                </p>
+                <pre>output:{{vm.output1}}</pre>
+
+                <p> vm.output2 = sampleArr.some(largeThanZero);</p>
+                <pre>output:{{vm.output2}}</pre>
+
+                <p class = "text-primary">
+                    // method: map(callback) and filter(callback)<br>
+                    // return a new Arr;
+                </p>
+                <p> vm.output3 = sampleArr.map(largeThanZero);</p>
+                <pre>output:{{vm.output3}} , length: {{vm.output3.length}}</pre>
+
+                <p> vm.output4 = sampleArr.filter(largeThanZero);</p>
+                <pre>output:{{vm.output4}} , length: {{vm.output4.length}}</pre>
+
+                <p class = "text-primary">
+                    // method: forEach(callback)<br>
+                   // callback( element, index, array)
+                </p>
+                <p> var sampleArr2 = [1,2,3]; <br>
+                    function plusHundred(element, index, array){ <br>
+                    &nbsp;&nbsp;array[index] = element + 100;<br>
+                    } <br>
+                    sampleArr2.forEach(plusHundred);<br>
+                    vm.output5 = sampleArr2;
+                </p>
+                <pre>output:{{vm.output5}} , length: {{vm.output5.length}}</pre>
+
+            </div>
+        </div>
+
+        <div class = "panel panel-default">
+            <div class = "panel-heading" ng-click = "vm.togglePanel(5)">Sort and IndexOf</div>
+            <div ng-show = "vm.panelControl[5]" class = "panel-body">
+                <p class = "text-primary">
+                    // method: sort() and sort(callback) <br>
+                    // callback is customized compare function, eg: callback(a,b) { return a-b }
+                </p>
+                <p>
+                    var sampleArr3 = [ <br>
+                    &nbsp;&nbsp;{name: "Alice",math: 1, eng: 100}, <br>
+                    &nbsp;&nbsp;{name: "Bob",math: 100, eng: 1 }, <br>
+                    &nbsp;&nbsp;{name: "David",math: 8, eng: 8}, <br>
+                    ]; <br>
+
+                    function compareMath(a,b){ <br>
+                    &nbsp;&nbsp;if(a.math == b.math){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;        return 0;<br>
+                    &nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp; return a.math > b.math ? 1 : -1;<br>
+                    }<br>
+                    vm.output6 = sampleArr3.sort(compareMath).reverse();
+                </p>
+                <pre>output:{{vm.output6}}, length:{{vm.output6.length}};</pre>
+
+                <p class = "text-primary">
+                    // method: indexOf() and lastIndexOf()
+                </p>
+
+                <p>
+                    var sampleArr4 = [1,0,0,0,0,1]; <br>
+                    vm.output7 = sampleArr4.indexOf(1); <br>
+                    vm.output8 = sampleArr4.lastIndexOf(1);
+                </p>
+
+                <pre>indexOf : {{vm.output7}}, lastIndexOf {{vm.output8}};</pre>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+

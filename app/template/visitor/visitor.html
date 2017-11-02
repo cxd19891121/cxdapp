@@ -1,54 +1,63 @@
 <!DOCTYPE html>
 <html ng-app="cxdApp" ng-controller = "visitorCtrl as vm">
 
-
-
 <head>
-<!--bower information-->
+    <meta charset="utf-8">
+    <title>cxdApp</title>
+
+    <!--bower information-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--Angular -->
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
-<!--css format-->
-    <meta charset="utf-8">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--css format-->
     <link rel="stylesheet" href= {{vm.css}}>
 
 </head>
 
 <body>
-<ui-view name="top"></ui-view>
-<button type="button" class="btn btn-lg btn-default" ng-click="vm.changeCss(vm.cssList.yeti)">Yeti</button>
-<button type="button" class="btn btn-lg btn-default" ng-click="vm.changeCss(vm.cssList.superhero)">Super Hero</button>
-<ui-view></ui-view>
-<ui-view name="bot"></ui-view>
+    <ui-view name="top"></ui-view>
+    <!--<button type="button" class="btn btn-lg btn-default" ng-click="vm.changeCss(vm.cssList.yeti)">Yeti</button>-->
+    <!--<button type="button" class="btn btn-lg btn-default" ng-click="vm.changeCss(vm.cssList.superhero)">Super Hero</button>-->
+    <ui-view></ui-view>
+    <ui-view name="bot"></ui-view>
 </body>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--router information-->
+    <script src ='/app/template/visitor/visitor_ui_route.js'></script>
 
-<!--router information-->
-<script src ='/app/template/visitor/visitor_ui_route.js'></script>
-
-<!--view-->
-<script src ='/app/component/working/view/working_view.html'></script>
-<script src ='/app/component/login/view/login_view.html'></script>
-<script src ="/app/component/javaSpringDemo/java_spring.html"></script>
-<script src ="/app/component/javaSpringDemo/java_spring_user.html"></script>
-<script src ="/app/component/javaSpringDemo/java_note.html"></script>
+    <!--view-->
+    <script src ='/app/component/working/view/working_view.html'></script>
+    <script src ='/app/component/login/view/login_view.html'></script>
+    <script src ="/app/component/javaSpringDemo/java_spring.html"></script>
+    <script src ="/app/component/javaSpringDemo/java_spring_user.html"></script>
+    <script src ="/app/component/javaSpringDemo/java_note.html"></script>
+    <script src = "/app/component/welcome/welcome.html"></script>
+    <script src ="/app/component/cxd/js_note.html"></script>
 
 
-<!--controller-->
-<script src ='/app/template/visitor/visitor_controller.js'></script>
-<script src ='/app/component/working/controller/working_controller.js'></script>
-<script src ='/app/component/login/controller/login_controller.js'></script>
-<script src ='/app/component/navigation/navigation_controller.js'></script>
-<script src ='/app/component/javaSpringDemo/java_spring_controller.js'></script>
-<script src = "/app/component/javaSpringDemo/java_user_controller.js"></script>
-<script src = "/app/component/javaSpringDemo/java_note_controller.js"></script>
+    <!--controller-->
+    <script src ='/app/template/visitor/visitor_controller.js'></script>
+    <script src ='/app/component/working/controller/working_controller.js'></script>
+    <script src ='/app/component/login/controller/login_controller.js'></script>
+    <script src ='/app/component/navigation/navigation_controller.js'></script>
+    <script src ='/app/component/javaSpringDemo/java_spring_controller.js'></script>
+    <script src = "/app/component/javaSpringDemo/java_user_controller.js"></script>
+    <script src = "/app/component/javaSpringDemo/java_note_controller.js"></script>
+    <script src = "/app/component/welcome/welcomeController.js"></script>
+    <script src = "/app/component/cxd/js_note_controller.js"></script>
 
-<!--util : service and factory-->
-<script src ='/app/util/ajaxService.js'></script>
+    <!--util : service and factory-->
+    <script src ='/app/util/ajaxService.js'></script>
 </html>
 
 

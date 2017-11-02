@@ -5,13 +5,14 @@ var userService = require('./../service/userService');
 /* GET 跨域请求 （本地调试的时候用得到） */
 router.all('*', CROP);
 
+
 /* GET users listing. */
 router.get('/', function(req, res) {
-    console.log("user get");
-    userService.getAllUser(function(o){
-        res.send(o);
+        console.log("user get");
+        userService.getAllUser(function(o){
+            res.send(o);
+        });
     });
-});
 
 router.get("/sample/:id", function(req, res){
     var id = req.params.id;

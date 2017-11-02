@@ -26,11 +26,19 @@
             navigationCtrl:"navigationCtrl",
             javaCtrl:"javaCtrl",
             javaUserCtrl:"javaUserCtrl",
-            javaNoteCtrl:"javaNoteCtrl"
+            javaNoteCtrl:"javaNoteCtrl",
+            welcomeCtrl:"welcomeCtrl",
+            jsNoteCtrl:"jsNoteCtrl"
         };
 
         /* Component part: It is a object which has the HTML contents in it. */
         var component = {
+
+            jsNote:{
+                templateUrl:"./app/component/cxd/js_note.html",
+                controller:controllers.jsNoteCtrl,
+                controllerAs:"vm"
+            },
             navigation: {
                 templateUrl: "./app/component/navigation/navigation.html",
             },
@@ -47,6 +55,10 @@
                 templateUrl: "./app/component/login/view/login_view.html",
                 controller: controllers.loginCtrl,
                 controllerAs: "vm"
+            },
+            signup:{
+
+                templateUrl:"./app/component/login/view/signup_view.html"
             },
             cssShow: {
                 templateUrl:"./app/template/cssShow/cssShow.html",
@@ -69,6 +81,11 @@
                 templateUrl:"./app/component/javaSpringDemo/java_note.html",
                 controller:controllers.javaNoteCtrl,
                 controllerAs:"vm"
+            },
+            welcome:{
+                templateUrl:"./app/component/welcome/welcome.html",
+                controller:controllers.welcomeCtrl,
+                controllerAs:"vm"
             }
         };
 
@@ -89,6 +106,11 @@
                 "top": component.navigation,
                 "": component.login
             },
+
+            signup:{
+                "top":component.navigation,
+                "":component.signup
+            },
             cssShow:{
                 "top":component.navigation,
                 "":component.cssShow
@@ -107,7 +129,16 @@
             javaSpringNote:{
                 "top":component.navigation,
                 "":component.javaNote
+            },
+            welcome:{
+                "top":component.navigation,
+                "":component.welcome
+            },
+            jsNote:{
+                "top":component.navigation,
+                "":component.jsNote
             }
+
         };
 
 
@@ -125,6 +156,11 @@
                 url:'/test',
                 views:view.cssShow
             })
+            .state("signup",{
+                url:'/signup',
+                views:view.signup
+            })
+
             .state('original',{
                 url:'/original',
                 views:view.original
@@ -140,6 +176,15 @@
             .state("java_note",{
                 url:"/java/note/:id",
                 views:view.javaSpringNote
+            })
+            .state("welcome",{
+                url:"/welcome",
+                views: view.welcome,
+            })
+            .state("cxd",{
+                url:"/cxd",
+                views: view.jsNote,
+
             })
 
         ;

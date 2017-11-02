@@ -25,6 +25,7 @@ var userModule = (function tagSchemaModule() {
             type: Number,
             default:2,
         },
+
         hidden: {
             type: Boolean,
             default: false

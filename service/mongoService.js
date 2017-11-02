@@ -2,7 +2,7 @@
  * Created by xiaodong chen on 12/20/2016.
  */
 var mongoose = require('mongoose');
-var mongoConfig = require('./../config/config').MONGODB
+var mongoConfig = require('./../config/config').MONGODB;
 
 
 
@@ -13,6 +13,13 @@ var mongoDB = (function mongodbService(){
     var url = mongoConfig.url;
     mongoose.connect(url,options);
     var db = mongoose.connection;
+
+
+    var mongoServiceAPI = {
+        mongo : getMongoose,
+        test : testConnection
+    };
+
 
     function getMongoose(){
         return mongoose;
@@ -28,13 +35,10 @@ var mongoDB = (function mongodbService(){
         });
     }
 
-    var mongoServiceAPI = {
-        mongo : getMongoose,
-        test : testConnection
-    };
+
     return mongoServiceAPI;
 
 
-})()
+})();
 
 module.exports = mongoDB;

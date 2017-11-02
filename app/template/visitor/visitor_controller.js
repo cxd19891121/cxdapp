@@ -18,6 +18,7 @@
         vm.cssList = {
             yeti:"/app/css/yeti/bootstrap.min.css",
             superhero: "/app/css/superhero/bootstrap.min.css",
+            none:"",
         }
         vm.css = vm.cssList.superhero;
 
