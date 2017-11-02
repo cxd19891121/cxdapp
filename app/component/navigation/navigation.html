@@ -1,35 +1,81 @@
-
 <div>
-    <ul class="nav nav-pills">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href = "#!/java">Java Demo</a></li>
-        <li><a href="/#!/login">Profile</a></li>
-        <li class="disabled"><a href="#">Disabled</a></li>
-        <li ng-repeat  = '(k,v) in vm.cssList'>
-            <a>
-                <button type="button" class="btn btn-xs btn-primary" ng-click="vm.changeCss(v)">{{k
-                    }}</button>
-            </a>
-        </li>
+    <nav class="navbar navbar-default">
+        <div class = "container-fluid">
+            <div class="navbar-header">
+                <a href="#" class = "navbar-brand">CXDAPP</a>
+            </div>
 
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                Dropdown <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li class="divider"></li>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#!/welcome">Welcome</a></li>
+                <li><a href="#!/java">Java Demo</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown"  aria-expanded="false">
+                        Theme <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <div ng-repeat = '(k,v) in vm.cssList' >
+                            <li>
+                                <button class = "btn btn-block btn-primary" ng-click = "vm.changeCss(v)">
+                                    {{k}}</button>
+                            </li>
+                        </div>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
             </ul>
-        </li>
 
+            <button class="btn btn-danger navbar-btn">Button</button>
 
-    </ul>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
 
-
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!/signup"><label class="glyphicon glyphicon-plus"></label> Sign Up</a></li>
+                <li><a href="#!/login"><label  class="glyphicon glyphicon-pencil"></label> Login</a></li>
+            </ul>
+        </div>
+    </nav>
 
 </div>
+
+<!--<div>-->
+    <!--<ul class="nav nav-pills">-->
+        <!--<li class="active"><a href="#">Home</a></li>-->
+        <!--<li><a href = "#!/java">Java Demo</a></li>-->
+        <!--<li><a href="/#!/login">Profile</a></li>-->
+        <!--<li class="disabled"><a href="#">Disabled</a></li>-->
+        <!--<li ng-repeat  = '(k,v) in vm.cssList'>-->
+            <!--<a>-->
+                <!--<button type="button" class="btn btn-xs btn-primary" ng-click="vm.changeCss(v)">{{k-->
+                    <!--}}</button>-->
+            <!--</a>-->
+        <!--</li>-->
+
+        <!--<li class="dropdown">-->
+            <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">-->
+                <!--Dropdown <span class="caret"></span>-->
+            <!--</a>-->
+            <!--<ul class="dropdown-menu">-->
+                <!--<li><a href="#">Action</a></li>-->
+                <!--<li><a href="#">Another action</a></li>-->
+                <!--<li><a href="#">Something else here</a></li>-->
+
+                <!--<li class="divider"></li>-->
+                <!--<li><a href="#">Separated link</a></li>-->
+                <!--<li class="divider"></li>-->
+            <!--</ul>-->
+        <!--</li>-->
+    <!--</ul>-->
+
+<!--</div>-->
